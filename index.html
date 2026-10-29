@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4ead7">
+<meta name="robots" content="noindex">
+<title>Um Convite Fora do Roteiro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Ícones SVG reutilizáveis -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-lupa" viewBox="0 0 48 48"><circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M28.5 28.5 40 40" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M16 20h8M20 16v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-articulacao" viewBox="0 0 48 48"><path d="M10 8 22 22" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M26 26 38 40" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M32 14a12 12 0 0 1 4 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 4"/></symbol>
+    <symbol id="i-postura" viewBox="0 0 48 48"><circle cx="24" cy="9" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M24 15v13M24 28l-6 14M24 28l6 14M15 20h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M40 6v36" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 4" stroke-linecap="round"/></symbol>
+    <symbol id="i-batimento" viewBox="0 0 48 48"><path d="M24 40C10 30 6 22 6 16a9 9 0 0 1 18-2 9 9 0 0 1 18 2c0 6-4 14-18 24Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 24h8l3-6 4 11 3-5h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-prancheta" viewBox="0 0 48 48"><rect x="11" y="8" width="26" height="34" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="18" y="5" width="12" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M17 22h14M17 29h14M17 36h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-coracao" viewBox="0 0 24 24"><path d="M12 21C5 16 3 12 3 9a4.5 4.5 0 0 1 9-1 4.5 4.5 0 0 1 9 1c0 3-2 7-9 12Z" fill="currentColor"/></symbol>
+    <symbol id="i-flor" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M32 60V30"/><path d="M32 48c-8-1-12-6-12-12 8 0 12 5 12 12Z"/><path d="M32 42c8-1 12-6 12-12-8 0-12 5-12 12Z"/><circle cx="32" cy="22" r="3.2"/><path d="M32 18c-4-8-1-12 0-13 1 1 4 5 0 13ZM36 22c8-1 11 2 12 4-1 1-5 3-12-4ZM28 22c-8-1-11 2-12 4 1 1 5 3 12-4ZM34 25c5 6 4 10 3 12-2 0-6-2-3-12ZM30 25c-5 6-4 10-3 12 2 0 6-2 3-12Z"/></g></symbol>
+    <symbol id="i-coluna" viewBox="0 0 24 64"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2" width="10" height="8" rx="3"/><rect x="6" y="13" width="12" height="8" rx="3"/><rect x="5" y="24" width="14" height="8" rx="3"/><rect x="6" y="35" width="12" height="8" rx="3"/><rect x="7" y="46" width="10" height="8" rx="3"/><path d="M9 58h6l-1 5h-4Z"/></g></symbol>
+    <symbol id="i-marcador" viewBox="0 0 24 32"><path d="M2 0h20v32l-10-8L2 32Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Marcador de livro: acompanha o progresso -->
+<div class="bookmark" id="bookmark" hidden>
+  <svg class="bookmark__ribbon" aria-hidden="true"><use href="#i-marcador"/></svg>
+  <p class="bookmark__text" id="bookmarkText"></p>
+  <div class="bookmark__bar" role="progressbar" aria-label="Progresso da leitura" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" id="bookmarkBar"><span></span></div>
+</div>
+
+<div class="sr-only" id="status" role="status" aria-live="polite"></div>
+
+<main id="conteudo" tabindex="-1">
+
+  <noscript>
+    <p class="noscript">Este convite usa JavaScript para virar as páginas. Ative o JavaScript no navegador para ler a história.</p>
+  </noscript>
+
+  <!-- 0 · CAPA -->
+  <section class="page page--cover" id="p0" data-step="0" aria-labelledby="capaTitulo">
+    <div class="cover">
+      <svg class="cover__flor cover__flor--a" aria-hidden="true"><use href="#i-flor"/></svg>
+      <svg class="cover__flor cover__flor--b" aria-hidden="true"><use href="#i-flor"/></svg>
+      <p class="cover__selo" data-bind="capa.selo"></p>
+      <div class="cover__spine" aria-hidden="true">
+        <svg><use href="#i-coluna"/></svg>
+      </div>
+      <h1 id="capaTitulo" class="cover__titulo" data-bind="capa.titulo"></h1>
+      <p class="cover__sub" data-bind="capa.subtitulo"></p>
+      <p class="cover__para" id="capaPara" hidden></p>
+      <p class="cover__detalhe"><svg aria-hidden="true"><use href="#i-articulacao"/></svg><span data-bind="capa.detalhe"></span></p>
+      <button type="button" class="btn btn--primary" id="btnAbrir" data-bind="capa.botao"></button>
+    </div>
+  </section>
+
+  <!-- 1 · PRIMEIRO CAPÍTULO -->
+  <section class="page" id="p1" data-step="1" aria-labelledby="t1" hidden>
+    <article class="paper">
+      <h2 id="t1" class="paper__titulo" data-bind="capitulo1.titulo"></h2>
+      <div class="paper__texto dropcap" id="cap1Texto"></div>
+      <nav class="nav">
+        <button type="button" class="btn btn--ghost" data-go="0">Voltar</button>
+        <button type="button" class="btn btn--primary" data-go="2" data-bind="capitulo1.botao"></button>
+      </nav>
+    </article>
+  </section>
+
+  <!-- 2 · FISIOTERAPIA DO ROMANCE -->
+  <section class="page" id="p2" data-step="2" aria-labelledby="t2" hidden>
+    <article class="paper">
+      <h2 id="t2" class="paper__titulo" data-bind="fisio.titulo"></h2>
+      <p class="paper__intro" data-bind="fisio.intro"></p>
+      <ul class="cards" id="fisioCards"></ul>
+      <nav class="nav">
+        <button type="button" class="btn btn--ghost" data-go="1">Voltar</button>
+        <button type="button" class="btn btn--primary" data-go="3" data-bind="fisio.botao"></button>
+      </nav>
+    </article>
+  </section>
+
+  <!-- 3 · TESTE -->
+  <section class="page" id="p3" data-step="3" aria-labelledby="t3" hidden>
+    <article class="paper">
+      <h2 id="t3" class="paper__titulo" data-bind="teste.titulo"></h2>
+      <p class="paper__intro" data-bind="teste.intro"></p>
+
+      <div id="quiz" class="quiz">
+        <p class="quiz__passo" id="quizPasso"></p>
+        <div class="quiz__dots" id="quizDots" aria-hidden="true"></div>
+        <fieldset class="quiz__card" id="quizCard">
+          <legend class="quiz__pergunta" id="quizPergunta"></legend>
+          <div class="quiz__opcoes" id="quizOpcoes"></div>
+        </fieldset>
+        <nav class="nav">
+          <button type="button" class="btn btn--ghost" id="quizVoltar">Voltar</button>
+          <button type="button" class="btn btn--primary" id="quizProxima" disabled>Próxima</button>
+        </nav>
+      </div>
+
+      <div id="quizResultado" class="resultado" hidden>
+        <h3 id="resTitulo"></h3>
+        <ul id="resLista"></ul>
+        <p class="resultado__final" id="resFinal"></p>
+        <nav class="nav">
+          <button type="button" class="btn btn--ghost" id="quizRefazer"></button>
+          <button type="button" class="btn btn--primary" data-go="4" id="quizSeguir"></button>
+        </nav>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4 · CARTA -->
+  <section class="page" id="p4" data-step="4" aria-labelledby="t4" hidden>
+    <article class="paper paper--carta">
+      <h2 id="t4" class="paper__titulo" data-bind="carta.titulo"></h2>
+
+      <div class="envelope-wrap">
+        <button type="button" class="envelope" id="envelope" aria-expanded="false" aria-controls="cartaConteudo">
+          <span class="envelope__back"></span>
+          <span class="envelope__papel" id="cartaConteudo" aria-hidden="true"></span>
+          <span class="envelope__frente"></span>
+          <span class="envelope__aba"></span>
+          <svg class="envelope__selo" aria-hidden="true"><use href="#i-coracao"/></svg>
+          <span class="sr-only" id="envelopeRotulo">Abrir a carta</span>
+        </button>
+        <p class="envelope__dica" id="envelopeDica"></p>
+      </div>
+
+      <div class="carta" id="cartaLida" hidden>
+        <div class="carta__texto" id="cartaTexto" tabindex="-1"></div>
+        <p class="carta__assinatura" id="cartaAssinatura"></p>
+        <button type="button" class="btn btn--ghost" id="cartaFechar"></button>
+      </div>
+
+      <nav class="nav">
+        <button type="button" class="btn btn--ghost" data-go="3">Voltar</button>
+        <button type="button" class="btn btn--primary" data-go="5" id="cartaSeguir"></button>
+      </nav>
+    </article>
+  </section>
+
+  <!-- 5 · CONVITE -->
+  <section class="page" id="p5" data-step="5" aria-labelledby="t5" hidden>
+    <article class="paper paper--convite">
+      <svg class="paper__flor" aria-hidden="true"><use href="#i-flor"/></svg>
+      <h2 id="t5" class="paper__titulo" data-bind="convite.titulo"></h2>
+      <div class="paper__texto paper__texto--grande" id="conviteTexto"></div>
+
+      <div class="respostas" id="respostas">
+        <button type="button" class="btn btn--primary btn--block" id="btnAceito" data-bind="convite.botaoAceito"></button>
+        <button type="button" class="btn btn--outline btn--block" id="btnDetalhes" data-bind="convite.botaoDetalhes"></button>
+        <button type="button" class="btn btn--quiet btn--block" id="btnDepois" data-bind="convite.botaoDepois"></button>
+      </div>
+
+      <form class="detalhes" id="detalhes" hidden novalidate>
+        <h3 data-bind="convite.detalhesTitulo"></h3>
+        <p class="detalhes__nota" data-bind="convite.detalhesNota"></p>
+        <fieldset class="detalhes__lista">
+          <legend class="sr-only">Opções de encontro</legend>
+          <div id="detalhesOpcoes"></div>
+        </fieldset>
+        <div class="campo" id="campoOutro" hidden>
+          <label for="inputOutro" id="labelOutro"></label>
+          <input type="text" id="inputOutro" maxlength="120" autocomplete="off" enterkeyhint="done">
+        </div>
+        <p class="detalhes__aviso" id="detalhesAviso" role="alert" hidden></p>
+        <nav class="nav">
+          <button type="button" class="btn btn--ghost" id="detalhesVoltar"></button>
+          <button type="submit" class="btn btn--primary" id="detalhesConfirmar"></button>
+        </nav>
+      </form>
+
+      <nav class="nav nav--solo">
+        <button type="button" class="btn btn--ghost" data-go="4">Voltar à carta</button>
+      </nav>
+    </article>
+  </section>
+
+  <!-- 6 · FINAL -->
+  <section class="page" id="p6" data-step="6" aria-labelledby="t6" hidden>
+    <article class="paper paper--final">
+      <div class="confete" id="confete" aria-hidden="true"></div>
+      <p class="final__selo" id="finalSelo" hidden></p>
+      <h2 id="t6" class="paper__titulo" tabindex="-1"></h2>
+      <p class="paper__intro" id="finalIntro" hidden></p>
+      <dl class="sinopse" id="sinopse" hidden></dl>
+      <div class="paper__texto" id="finalTexto"></div>
+
+      <div class="extras">
+        <button type="button" class="btn btn--outline" id="btnCuriosidade" aria-expanded="false" aria-controls="curiosidade"></button>
+        <p class="extras__curiosidade" id="curiosidade" hidden></p>
+
+        <h3 class="extras__titulo" id="clichesTitulo"></h3>
+        <p class="extras__dica" id="clichesDica"></p>
+        <ul class="cliches" id="clichesLista"></ul>
+      </div>
+
+      <nav class="nav">
+        <button type="button" class="btn btn--ghost" id="finalRever" hidden></button>
+        <button type="button" class="btn btn--primary" id="finalReiniciar"></button>
+      </nav>
+    </article>
+  </section>
+
+</main>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
